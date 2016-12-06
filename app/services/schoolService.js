@@ -1,0 +1,49 @@
+var $ = require("jquery");
+var promise = require("es6-promise");
+
+var port = process.env.PORT || 5000;
+var ip = process.env.IP || 'localhost';
+console.log("port===========================", port, process.env);
+console.log("---------------------------------", "#","$");
+var resourceUrl = "http://localhost:5000/api/schools"; //"https://murmuring-refuge-33418.herokuapp.com/api/schools"; //"http://localhost:7777/api/schools";
+
+module.exports = {
+    addSchool: function (school) {
+        var Promise = promise.Promise;
+        return new Promise(function (resolve, reject) {
+            $.ajax({
+                url: resourceUrl,
+                data: JSON.stringify(school),
+                method: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                success: resolve,
+                error: reject
+            });
+        });
+    },
+    getSchools: function () {
+        var Promise = promise.Promise;
+        return new Promise(function (resolve, reject) {
+            $.ajax({
+                url: resourceUrl,
+                method: "GET",
+                dataType: "json",
+                success: resolve,
+                error: reject
+            });
+        });
+    },
+    deleteSchool: function (school) {
+        var Promise = promise.Promise;
+        return new Promise(function (resolve, reject) {
+            $.ajax({
+                url: resourceUrl + "/" + school._id,
+                method: "DELETE",
+                dataType: "json",
+                success: resolve,
+                error: reject
+            });
+        });
+    }
+}
