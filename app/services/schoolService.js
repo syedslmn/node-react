@@ -1,7 +1,7 @@
 var $ = require("jquery");
 var promise = require("es6-promise");
 
-//"https://murmuring-refuge-33418.herokuapp.com/api/schools"; //"http://localhost:7777/api/schools";
+//"https://murmuring-refuge-33418.herokuapp.com/api/schools"; //"http://localhost:5000/api/schools";
 var resourceUrl = "https://murmuring-refuge-33418.herokuapp.com/api/schools";
 
 module.exports = {
