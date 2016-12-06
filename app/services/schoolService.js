@@ -1,11 +1,8 @@
 var $ = require("jquery");
 var promise = require("es6-promise");
 
-var port = process.env.PORT || 5000;
-var ip = process.env.IP || 'localhost';
-console.log("port===========================", port, process.env);
-console.log("---------------------------------", "#","$");
-var resourceUrl = "http://localhost:5000/api/schools"; //"https://murmuring-refuge-33418.herokuapp.com/api/schools"; //"http://localhost:7777/api/schools";
+//"https://murmuring-refuge-33418.herokuapp.com/api/schools"; //"http://localhost:7777/api/schools";
+var resourceUrl = "https://murmuring-refuge-33418.herokuapp.com/api/schools";
 
 module.exports = {
     addSchool: function (school) {
